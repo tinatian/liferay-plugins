@@ -11,35 +11,34 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-
 package com.liferay.testmisc.messaging;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
- * @author Brian Wing Shun Chan
+ * @author Tina Tian
  */
-public class TestSchedulerMessageListener extends BaseMessageListener {
+public class TestMessageListenerForSpringConfigJob
+	extends BaseMessageListener {
 
 	public static boolean isReceived() {
-		return _received;
+		try {
+			return _countDownLatch.await(60000, TimeUnit.MILLISECONDS);
+		}
+		catch (Exception te) {
+			return false;
+		}
 	}
-
+	
 	@Override
 	protected void doReceive(Message message) throws Exception {
-		if (_log.isInfoEnabled()) {
-			_log.info("Execute");
-		}
-
-		_received = true;
+		_countDownLatch.countDown();
 	}
-
-	private static Log _log = LogFactoryUtil.getLog(
-		TestSchedulerMessageListener.class);
-
-	private static volatile boolean _received;
+	
+	private static CountDownLatch _countDownLatch =
+		new CountDownLatch(1);
 
 }

@@ -14,6 +14,8 @@
 
 package com.liferay.chat.service.persistence.impl;
 
+import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.chat.NoSuchEntryException;
 import com.liferay.chat.model.Entry;
 import com.liferay.chat.model.impl.EntryImpl;
@@ -59,9 +61,10 @@ import java.util.Set;
  *
  * @author Brian Wing Shun Chan
  * @see EntryPersistence
- * @see EntryUtil
+ * @see com.liferay.chat.service.persistence.EntryUtil
  * @generated
  */
+@ProviderType
 public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	implements EntryPersistence {
 	/*
@@ -120,7 +123,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where createDate = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -137,7 +140,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where createDate = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -250,7 +253,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param createDate the create date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByCreateDate_First(long createDate,
@@ -298,7 +301,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param createDate the create date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByCreateDate_Last(long createDate,
@@ -354,7 +357,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param createDate the create date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByCreateDate_PrevAndNext(long entryId, long createDate,
@@ -595,7 +598,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where fromUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -612,7 +615,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where fromUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -725,7 +728,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByFromUserId_First(long fromUserId,
@@ -773,7 +776,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByFromUserId_Last(long fromUserId,
@@ -829,7 +832,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByFromUserId_PrevAndNext(long entryId, long fromUserId,
@@ -1069,7 +1072,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param toUserId the to user ID
@@ -1086,7 +1089,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param toUserId the to user ID
@@ -1199,7 +1202,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByToUserId_First(long toUserId,
@@ -1247,7 +1250,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByToUserId_Last(long toUserId,
@@ -1303,7 +1306,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByToUserId_PrevAndNext(long entryId, long toUserId,
@@ -1543,7 +1546,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where createDate = &#63; and fromUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -1562,7 +1565,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where createDate = &#63; and fromUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -1686,7 +1689,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_F_First(long createDate, long fromUserId,
@@ -1740,7 +1743,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_F_Last(long createDate, long fromUserId,
@@ -1801,7 +1804,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param fromUserId the from user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByC_F_PrevAndNext(long entryId, long createDate,
@@ -2053,7 +2056,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where createDate = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -2072,7 +2075,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where createDate = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -2196,7 +2199,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_T_First(long createDate, long toUserId,
@@ -2250,7 +2253,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_T_Last(long createDate, long toUserId,
@@ -2311,7 +2314,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByC_T_PrevAndNext(long entryId, long createDate,
@@ -2564,7 +2567,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where fromUserId = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -2583,7 +2586,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where fromUserId = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -2707,7 +2710,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByF_T_First(long fromUserId, long toUserId,
@@ -2761,7 +2764,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByF_T_Last(long fromUserId, long toUserId,
@@ -2822,7 +2825,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByF_T_PrevAndNext(long entryId, long fromUserId,
@@ -3081,7 +3084,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where createDate = &#63; and fromUserId = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -3101,7 +3104,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where createDate = &#63; and fromUserId = &#63; and toUserId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param createDate the create date
@@ -3233,7 +3236,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_F_T_First(long createDate, long fromUserId,
@@ -3294,7 +3297,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByC_F_T_Last(long createDate, long fromUserId,
@@ -3362,7 +3365,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param toUserId the to user ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByC_F_T_PrevAndNext(long entryId, long createDate,
@@ -3636,7 +3639,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries where fromUserId = &#63; and toUserId = &#63; and content = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -3656,7 +3659,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries where fromUserId = &#63; and toUserId = &#63; and content = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param fromUserId the from user ID
@@ -3802,7 +3805,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param content the content
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByF_T_C_First(long fromUserId, long toUserId,
@@ -3863,7 +3866,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param content the content
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a matching entry could not be found
+	 * @throws NoSuchEntryException if a matching entry could not be found
 	 */
 	@Override
 	public Entry findByF_T_C_Last(long fromUserId, long toUserId,
@@ -3931,7 +3934,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * @param content the content
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry[] findByF_T_C_PrevAndNext(long entryId, long fromUserId,
@@ -4291,7 +4294,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 *
 	 * @param entryId the primary key of the entry
 	 * @return the entry that was removed
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry remove(long entryId) throws NoSuchEntryException {
@@ -4303,7 +4306,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 *
 	 * @param primaryKey the primary key of the entry
 	 * @return the entry that was removed
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry remove(Serializable primaryKey) throws NoSuchEntryException {
@@ -4369,7 +4372,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	}
 
 	@Override
-	public Entry updateImpl(com.liferay.chat.model.Entry entry) {
+	public Entry updateImpl(Entry entry) {
 		entry = toUnwrappedModel(entry);
 
 		boolean isNew = entry.isNew();
@@ -4602,7 +4605,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 *
 	 * @param primaryKey the primary key of the entry
 	 * @return the entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry findByPrimaryKey(Serializable primaryKey)
@@ -4622,11 +4625,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	}
 
 	/**
-	 * Returns the entry with the primary key or throws a {@link com.liferay.chat.NoSuchEntryException} if it could not be found.
+	 * Returns the entry with the primary key or throws a {@link NoSuchEntryException} if it could not be found.
 	 *
 	 * @param entryId the primary key of the entry
 	 * @return the entry
-	 * @throws com.liferay.chat.NoSuchEntryException if a entry with the primary key could not be found
+	 * @throws NoSuchEntryException if a entry with the primary key could not be found
 	 */
 	@Override
 	public Entry findByPrimaryKey(long entryId) throws NoSuchEntryException {
@@ -4795,7 +4798,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns a range of all the entries.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of entries
@@ -4811,7 +4814,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Returns an ordered range of all the entries.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of entries
@@ -4971,8 +4974,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Entry exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
-	private static Log _log = LogFactoryUtil.getLog(EntryPersistenceImpl.class);
-	private static Entry _nullEntry = new EntryImpl() {
+	private static final Log _log = LogFactoryUtil.getLog(EntryPersistenceImpl.class);
+	private static final Entry _nullEntry = new EntryImpl() {
 			@Override
 			public Object clone() {
 				return this;
@@ -4984,7 +4987,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 			}
 		};
 
-	private static CacheModel<Entry> _nullEntryCacheModel = new CacheModel<Entry>() {
+	private static final CacheModel<Entry> _nullEntryCacheModel = new CacheModel<Entry>() {
 			@Override
 			public Entry toEntityModel() {
 				return _nullEntry;

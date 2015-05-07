@@ -14,6 +14,8 @@
 
 package com.liferay.chat.service.persistence.impl;
 
+import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.chat.NoSuchStatusException;
 import com.liferay.chat.model.Status;
 import com.liferay.chat.model.impl.StatusImpl;
@@ -59,9 +61,10 @@ import java.util.Set;
  *
  * @author Brian Wing Shun Chan
  * @see StatusPersistence
- * @see StatusUtil
+ * @see com.liferay.chat.service.persistence.StatusUtil
  * @generated
  */
+@ProviderType
 public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	implements StatusPersistence {
 	/*
@@ -94,11 +97,11 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 			new String[] { Long.class.getName() });
 
 	/**
-	 * Returns the status where userId = &#63; or throws a {@link com.liferay.chat.NoSuchStatusException} if it could not be found.
+	 * Returns the status where userId = &#63; or throws a {@link NoSuchStatusException} if it could not be found.
 	 *
 	 * @param userId the user ID
 	 * @return the matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByUserId(long userId) throws NoSuchStatusException {
@@ -322,7 +325,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns a range of all the statuses where modifiedDate = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param modifiedDate the modified date
@@ -339,7 +342,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns an ordered range of all the statuses where modifiedDate = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param modifiedDate the modified date
@@ -456,7 +459,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param modifiedDate the modified date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByModifiedDate_First(long modifiedDate,
@@ -507,7 +510,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param modifiedDate the modified date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByModifiedDate_Last(long modifiedDate,
@@ -564,7 +567,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param modifiedDate the modified date
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next status
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status[] findByModifiedDate_PrevAndNext(long statusId,
@@ -803,7 +806,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns a range of all the statuses where online = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param online the online
@@ -820,7 +823,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns an ordered range of all the statuses where online = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param online the online
@@ -933,7 +936,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByOnline_First(boolean online,
@@ -982,7 +985,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByOnline_Last(boolean online,
@@ -1039,7 +1042,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next status
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status[] findByOnline_PrevAndNext(long statusId, boolean online,
@@ -1280,7 +1283,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns a range of all the statuses where modifiedDate = &#63; and online = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param modifiedDate the modified date
@@ -1299,7 +1302,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns an ordered range of all the statuses where modifiedDate = &#63; and online = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param modifiedDate the modified date
@@ -1423,7 +1426,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByM_O_First(long modifiedDate, boolean online,
@@ -1478,7 +1481,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching status
-	 * @throws com.liferay.chat.NoSuchStatusException if a matching status could not be found
+	 * @throws NoSuchStatusException if a matching status could not be found
 	 */
 	@Override
 	public Status findByM_O_Last(long modifiedDate, boolean online,
@@ -1540,7 +1543,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * @param online the online
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next status
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status[] findByM_O_PrevAndNext(long statusId, long modifiedDate,
@@ -1907,7 +1910,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 *
 	 * @param statusId the primary key of the status
 	 * @return the status that was removed
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status remove(long statusId) throws NoSuchStatusException {
@@ -1919,7 +1922,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 *
 	 * @param primaryKey the primary key of the status
 	 * @return the status that was removed
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status remove(Serializable primaryKey) throws NoSuchStatusException {
@@ -1985,7 +1988,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	}
 
 	@Override
-	public Status updateImpl(com.liferay.chat.model.Status status) {
+	public Status updateImpl(Status status) {
 		status = toUnwrappedModel(status);
 
 		boolean isNew = status.isNew();
@@ -2114,7 +2117,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 *
 	 * @param primaryKey the primary key of the status
 	 * @return the status
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status findByPrimaryKey(Serializable primaryKey)
@@ -2134,11 +2137,11 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	}
 
 	/**
-	 * Returns the status with the primary key or throws a {@link com.liferay.chat.NoSuchStatusException} if it could not be found.
+	 * Returns the status with the primary key or throws a {@link NoSuchStatusException} if it could not be found.
 	 *
 	 * @param statusId the primary key of the status
 	 * @return the status
-	 * @throws com.liferay.chat.NoSuchStatusException if a status with the primary key could not be found
+	 * @throws NoSuchStatusException if a status with the primary key could not be found
 	 */
 	@Override
 	public Status findByPrimaryKey(long statusId) throws NoSuchStatusException {
@@ -2307,7 +2310,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns a range of all the statuses.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of statuses
@@ -2323,7 +2326,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	 * Returns an ordered range of all the statuses.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.chat.model.impl.StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link StatusModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of statuses
@@ -2488,11 +2491,11 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Status exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
-	private static Log _log = LogFactoryUtil.getLog(StatusPersistenceImpl.class);
-	private static Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
+	private static final Log _log = LogFactoryUtil.getLog(StatusPersistenceImpl.class);
+	private static final Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
 				"online"
 			});
-	private static Status _nullStatus = new StatusImpl() {
+	private static final Status _nullStatus = new StatusImpl() {
 			@Override
 			public Object clone() {
 				return this;
@@ -2504,7 +2507,7 @@ public class StatusPersistenceImpl extends BasePersistenceImpl<Status>
 			}
 		};
 
-	private static CacheModel<Status> _nullStatusCacheModel = new CacheModel<Status>() {
+	private static final CacheModel<Status> _nullStatusCacheModel = new CacheModel<Status>() {
 			@Override
 			public Status toEntityModel() {
 				return _nullStatus;

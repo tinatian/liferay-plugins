@@ -22,7 +22,6 @@ import com.liferay.akismet.model.impl.AkismetDataImpl;
 import com.liferay.akismet.model.impl.AkismetDataModelImpl;
 import com.liferay.akismet.service.persistence.AkismetDataPersistence;
 
-import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderPath;
@@ -32,10 +31,7 @@ import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import com.liferay.portal.kernel.util.PropsKeys;
-import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.SetUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
@@ -875,10 +871,6 @@ public class AkismetDataPersistenceImpl extends BasePersistenceImpl<AkismetData>
 	 */
 	@Override
 	public void clearCache() {
-		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(AkismetDataImpl.class.getName());
-		}
-
 		EntityCacheUtil.clearCache(AkismetDataImpl.class);
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
@@ -1515,8 +1507,6 @@ public class AkismetDataPersistenceImpl extends BasePersistenceImpl<AkismetData>
 	private static final String _ORDER_BY_ENTITY_ALIAS = "akismetData.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No AkismetData exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No AkismetData exists with the key {";
-	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
-				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static final Log _log = LogFactoryUtil.getLog(AkismetDataPersistenceImpl.class);
 	private static final Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
 				"type"

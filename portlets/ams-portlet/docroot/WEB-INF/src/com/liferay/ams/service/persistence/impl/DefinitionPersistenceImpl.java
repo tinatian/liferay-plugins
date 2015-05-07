@@ -22,7 +22,6 @@ import com.liferay.ams.model.impl.DefinitionImpl;
 import com.liferay.ams.model.impl.DefinitionModelImpl;
 import com.liferay.ams.service.persistence.DefinitionPersistence;
 
-import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderPath;
@@ -31,10 +30,7 @@ import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import com.liferay.portal.kernel.util.PropsKeys;
-import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
@@ -130,10 +126,6 @@ public class DefinitionPersistenceImpl extends BasePersistenceImpl<Definition>
 	 */
 	@Override
 	public void clearCache() {
-		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(DefinitionImpl.class.getName());
-		}
-
 		EntityCacheUtil.clearCache(DefinitionImpl.class);
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
@@ -708,8 +700,6 @@ public class DefinitionPersistenceImpl extends BasePersistenceImpl<Definition>
 	private static final String _SQL_COUNT_DEFINITION = "SELECT COUNT(definition) FROM Definition definition";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "definition.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Definition exists with the primary key ";
-	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
-				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static final Log _log = LogFactoryUtil.getLog(DefinitionPersistenceImpl.class);
 	private static final Definition _nullDefinition = new DefinitionImpl() {
 			@Override

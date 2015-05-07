@@ -16,7 +16,6 @@ package com.liferay.samplelar.service.persistence.impl;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderPath;
@@ -26,10 +25,7 @@ import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import com.liferay.portal.kernel.util.PropsKeys;
-import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.SetUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
@@ -1969,10 +1965,6 @@ public class SampleLARBookingPersistenceImpl extends BasePersistenceImpl<SampleL
 	 */
 	@Override
 	public void clearCache() {
-		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(SampleLARBookingImpl.class.getName());
-		}
-
 		EntityCacheUtil.clearCache(SampleLARBookingImpl.class);
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
@@ -2682,8 +2674,6 @@ public class SampleLARBookingPersistenceImpl extends BasePersistenceImpl<SampleL
 	private static final String _ORDER_BY_ENTITY_ALIAS = "sampleLARBooking.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No SampleLARBooking exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No SampleLARBooking exists with the key {";
-	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
-				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static final Log _log = LogFactoryUtil.getLog(SampleLARBookingPersistenceImpl.class);
 	private static final Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
 				"uuid"

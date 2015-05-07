@@ -22,7 +22,6 @@ import com.liferay.opensocial.model.impl.GadgetImpl;
 import com.liferay.opensocial.model.impl.GadgetModelImpl;
 import com.liferay.opensocial.service.persistence.GadgetPersistence;
 
-import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderPath;
@@ -33,10 +32,7 @@ import com.liferay.portal.kernel.dao.orm.SQLQuery;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import com.liferay.portal.kernel.util.PropsKeys;
-import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.SetUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
@@ -3114,10 +3110,6 @@ public class GadgetPersistenceImpl extends BasePersistenceImpl<Gadget>
 	 */
 	@Override
 	public void clearCache() {
-		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(GadgetImpl.class.getName());
-		}
-
 		EntityCacheUtil.clearCache(GadgetImpl.class);
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
@@ -3820,8 +3812,6 @@ public class GadgetPersistenceImpl extends BasePersistenceImpl<Gadget>
 	private static final String _ORDER_BY_ENTITY_TABLE = "OpenSocial_Gadget.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Gadget exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Gadget exists with the key {";
-	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
-				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static final Log _log = LogFactoryUtil.getLog(GadgetPersistenceImpl.class);
 	private static final Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
 				"uuid"

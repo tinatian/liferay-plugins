@@ -206,7 +206,6 @@ public interface WSRPProducerModel extends BaseModel<WSRPProducer>, StagedModel 
 	 *
 	 * @return the last publish date of this w s r p producer
 	 */
-	@Override
 	public Date getLastPublishDate();
 
 	/**
@@ -214,7 +213,6 @@ public interface WSRPProducerModel extends BaseModel<WSRPProducer>, StagedModel 
 	 *
 	 * @param lastPublishDate the last publish date of this w s r p producer
 	 */
-	@Override
 	public void setLastPublishDate(Date lastPublishDate);
 
 	@Override
